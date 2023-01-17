@@ -1,4 +1,4 @@
-This project allows the user to interact and fetch desire images, to Download or to Set it was wallpaper. 
+This project allows the user to interact and fetch desire images, to Download or to Set it as wallpaper. 
 Provider is used for the State Management and Some Common Packages like dio, http, permission handler, cached network image etc.
 
 Screenshots:
