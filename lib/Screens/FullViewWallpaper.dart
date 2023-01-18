@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:wallpaperapp/Constants/Constants.dart';
 import 'package:wallpaperapp/Services/SetWallpaper.dart';
 
@@ -15,6 +16,20 @@ class FullViewWallpaper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    void saveImage()async{
+      SetWallpaper.saveFile(downloadUrl);
+      if(await Permission.storage.request().isGranted){
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              behavior: SnackBarBehavior.floating,
+              duration: Duration(seconds: 3),
+              content: Text("Image Saved to Gallery"),
+            )
+        );
+      }
+    }
+
     return Scaffold(
       body: Stack(
         children: [
@@ -63,14 +78,7 @@ class FullViewWallpaper extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () {
-                        SetWallpaper.saveFile(downloadUrl);
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              behavior: SnackBarBehavior.floating,
-                              duration: Duration(seconds: 3),
-                              content: Text("Image Saved to Gallery"),
-                            )
-                        );
+                        saveImage();
                       },
                       icon: const Icon(Icons.download,color: Colors.white,),
                     ),
