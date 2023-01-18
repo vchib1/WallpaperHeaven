@@ -54,7 +54,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Colors.grey.shade200,
-          borderRadius: BorderRadius.circular(30)
+          borderRadius: BorderRadius.circular(30),
         ),
         child: TextField(
           onSubmitted: (value){

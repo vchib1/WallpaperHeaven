@@ -27,3 +27,6 @@ Border whiteBorder = Border.all(
   color: Colors.white.withOpacity(.5),
   width: 1.0,
 );
+
+Border mainBorder = Border.all(color: Colors.purpleAccent);
+Border otherBorder = Border.all(color: Colors.grey);
