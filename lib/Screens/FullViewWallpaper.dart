@@ -18,8 +18,8 @@ class FullViewWallpaper extends StatelessWidget {
   Widget build(BuildContext context) {
 
     void saveImage()async{
-      SetWallpaper.saveFile(downloadUrl);
       if(await Permission.storage.request().isGranted){
+        SetWallpaper.saveFile(downloadUrl);
         ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               behavior: SnackBarBehavior.floating,
