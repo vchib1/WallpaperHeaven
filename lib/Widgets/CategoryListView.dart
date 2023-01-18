@@ -32,7 +32,6 @@ class CategoryListView extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: selected == index ? primaryColor : greyColor,
                   borderRadius: onlyLeftRight,
-                  border: selected == index ? mainBorder : otherBorder,
                 ),
                 alignment: Alignment.center,
                 child: Padding(
